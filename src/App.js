@@ -1,11 +1,9 @@
 import React from 'react';
-import Messages from './Layout/Messages';
+import Form from './Layout/Form';
+import Music from './Layout/Music';
 import './App.scss';
 
 const App = () => {
-	const url = 'https://soundcloud.com/black-hole-space/501a';
-	const title = '501';
-
 	return (
 		<>
 			<div id='stars'></div>
@@ -17,9 +15,8 @@ const App = () => {
 			<article>
 				<p>Welcome to a new experience, book us now!</p>
 				<p>Listen to our latest track below:</p>
-				<ul>
-					<li><a href="{url}">{title}</a></li>
-				</ul>
+				<Music project="blackhole" />
+
 				<p>Our SoundCloud:</p>
 				<a href="https://soundcloud.com/black-hole-space" title="SoundCloud">
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
@@ -30,15 +27,7 @@ const App = () => {
 				<h2>Leave a note</h2>
 				<p>Be sure to provide contact information</p>
 
-				<Messages type="error" message="Fout!"/>
-
-				<form method="post" action="/post">
-					<input type="hidden" name="project" value="blackhole"/>
-					<input type="hidden" name="fill_this"/>
-
-					<textarea name="note"></textarea><br/>
-					<input type="submit" value="Feed the black hole"/>
-				</form>
+				<Form />
 			</article>
 		</>
 	);
