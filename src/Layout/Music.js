@@ -8,7 +8,7 @@ const Music = (props) => {
         duration: null
     });
 	const loadTracks = () =>
-		fetch('https://sww.tf/tracks/' + props.project)
+		fetch('https://sww.tf/tracks/')
 	    .then(res => (res.ok ? res : Promise.reject(res)))
 	    .then(res => res.json());
 

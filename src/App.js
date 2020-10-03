@@ -1,14 +1,13 @@
 import React from 'react';
 import Form from './Layout/Form';
 import Music from './Layout/Music';
+import Stars from './Layout/Stars';
 import './App.scss';
 
 const App = () => {
 	return (
 		<>
-			<div id='stars'></div>
-			<div id='stars2'></div>
-			<div id='stars3'></div>
+			<Stars />
 
 			<section></section>
 			<h1>Black Hole</h1>

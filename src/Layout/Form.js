@@ -4,7 +4,7 @@ import Messages from './Messages';
 
 const Form = () => {
   	const [mailSent, setmailSent] = useState(false);
-  	const [error, setError] = useState(null);
+  	const [error, setError] = useState({});
   	const [formData, setFormData] = useState({});
 
 	const handleFormSubmit = e => {
@@ -16,11 +16,15 @@ const Form = () => {
 	  		data: formData
 		})
 	  	.then(result => {
+	      	setmailSent(true);
 	    	if (result.data.sent) {
-	      		setmailSent(result.data.sent)
-	      		setError(false)
+	      		setError({'sent': true});
 	    	} else {
-	      		setError(true)
+	      		setError({'sent': false, 'message': result.data.message});
+
+	      		result.data.errors.map((error) => {
+	      			document.getElementById(error).style.borderColor = 'red';
+	      		});
 	    	}
 	  	})
 	  	.catch(error => setError( error.message ));
@@ -36,14 +40,11 @@ const Form = () => {
   
   	return(
 	  	<form action="#">
-			<input type="hidden" name="project" value="blackhole" onChange={e => handleChange(e, 'project')} />
-			<input type="hidden" name="fill_this" onChange={e => handleChange(e, 'fill_this')} />
-
-			<textarea name="note" onChange={e => handleChange(e, 'note')}></textarea><br />
-
+			<textarea name="note" id="note" onChange={e => handleChange(e, 'note')}></textarea><br />
             <input type="submit" onClick={e => handleFormSubmit(e)} value="Feed the black hole" />
-          	{mailSent && <Messages type="success" message="Note sent!"/>}
-          	{error && <Messages type="error" message="Please fill the complete form" />}
+
+          	{mailSent && error.sent && <Messages type="success" message="Note sent!"/>}
+          	{mailSent && !error.sent && <Messages type="error" message={error.message} />}
 		</form>
 	);
 }
