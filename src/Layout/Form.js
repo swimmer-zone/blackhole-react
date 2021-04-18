@@ -22,7 +22,7 @@ const Form = () => {
 	    	} else {
 	      		setError({'sent': false, 'message': result.data.message});
 
-	      		result.data.errors.map((error) => {
+	      		result.data.errors.forEach((error) => {
 	      			document.getElementById(error).style.borderColor = 'red';
 	      		});
 	    	}

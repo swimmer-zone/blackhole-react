@@ -25,14 +25,17 @@ const Music = (props) => {
 				<Async.Loading>Loading...</Async.Loading>
 				<Async.Fulfilled>
 					{data => {
+						let album = data[props.project + '/all'];
 						return (
-							Object.keys(data[props.project].tracks).map(track => {
+							Object.keys(album.tracks).map(trackKey => {
+								let track = album.tracks[trackKey];
+						console.log(track)
 								return(
-									<li key={data[props.project].tracks[track].filename}>
+									<li key={track.filename}>
 										<button 
-											data-permalink={data[props.project].tracks[track].title}
-											onClick={() => setState({currentTrack: data[props.project].tracks[track].filename})}>
-											{data[props.project].tracks[track].title}
+											data-permalink={track.title}
+											onClick={() => setState({currentTrack: track.filename})}>
+											{track.title}
 										</button>
 									</li>
 								)
