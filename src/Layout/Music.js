@@ -29,7 +29,6 @@ const Music = (props) => {
 						return (
 							Object.keys(album.tracks).map(trackKey => {
 								let track = album.tracks[trackKey];
-						console.log(track)
 								return(
 									<li key={track.filename}>
 										<button 
