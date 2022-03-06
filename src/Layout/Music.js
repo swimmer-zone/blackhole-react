@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Async from 'react-async';
+import tracks from '../json/tracks.json';
 
 const Music = (props) => {
     const player = useRef(null);
@@ -7,10 +8,6 @@ const Music = (props) => {
         currentTrack: null,
         duration: null
     });
-	const loadTracks = () =>
-		fetch('https://sww.tf/tracks/')
-	    .then(res => (res.ok ? res : Promise.reject(res)))
-	    .then(res => res.json());
 
     useEffect(() => {
         if (state.currentTrack) {
@@ -21,31 +18,20 @@ const Music = (props) => {
 
 	return (
 		<ul>
-			<Async promiseFn={loadTracks}>
-				<Async.Loading>Loading...</Async.Loading>
-				<Async.Fulfilled>
-					{data => {
-						let album = data[props.project + '/all'];
-						return (
-							Object.keys(album.tracks).map(trackKey => {
-								let track = album.tracks[trackKey];
-								return(
-									<li key={track.filename}>
-										<button 
-											data-permalink={track.title}
-											onClick={() => setState({currentTrack: track.filename})}>
-											{track.title}
-										</button>
-									</li>
-								)
-							})
-						)
-					}}
-				</Async.Fulfilled>
-				<Async.Rejected>
-					{error => `Something went wrong: ${error.message}`}
-				</Async.Rejected>
-			</Async>
+            {Object.keys(tracks).map(key => {
+				let track = tracks[key];
+				let scName = '/data/tracks/' + track.filename + '.mp3';
+				return(
+					<li key={key}>
+						<button 
+							data-permalink={track.title}
+							onClick={() => setState({currentTrack: scName})}>
+							{track.title}
+						</button>
+					</li>
+				)
+            })}
+						
 			<audio ref={player} />
 		</ul>
 	);
