@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Async from 'react-async';
 import tracks from '../json/tracks.json';
+import '../assets/components/music.scss';
 
-const Music = (props) => {
+const Music = () => {
     const player = useRef(null);
     const [ state, setState ] = useState({
         currentTrack: null,

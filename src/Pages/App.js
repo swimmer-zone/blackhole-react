@@ -1,20 +1,18 @@
 import React from 'react';
-import Form from './Layout/Form';
-import Music from './Layout/Music';
-import Stars from './Layout/Stars';
-import './App.scss';
+import { Hole, Form, Music, Stars } from '../Components';
+import '../assets/app.scss';
 
 const App = () => {
 	return (
 		<>
 			<Stars />
+			<Hole />
 
-			<section></section>
 			<h1>Black Hole</h1>
 			<article>
 				<p>Welcome to a new experience, book us now!</p>
 				<p>Listen to our latest track below:</p>
-				<Music project="blackhole" />
+				<Music />
 
 				<p>Our SoundCloud:</p>
 				<a href="https://soundcloud.com/black-hole-space" title="SoundCloud">

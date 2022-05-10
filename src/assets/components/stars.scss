@@ -1,45 +1,4 @@
-$white: #ffffff;
-
-@keyframes animStar {
-    from {
-        transform: translateY(0px);
-    }
-    to {
-        transform: translateY(-2000px);
-    }
-}
-@keyframes animHole {
-    0% {
-    box-shadow: 0    0    2px  2px rgba(255, 255, 255, 0.7),
-                4px -4px  8px  8px rgba(255, 0, 0, 0.5),
-               -4px  4px  8px  8px rgba(0, 0, 255, 0.3),
-                0    0   16px 16px rgba(255, 0, 255, 0.4),
-               -6px  2px  8px  8px rgba(255, 0, 0, 0.4),
-               -8px -4px  8px  8px rgba(0, 0, 255, 0.6),
-                4px  8px 16px 16px rgba(255, 0, 255, 0.3),
-               12px 40px  8px  8px rgba(0, 0, 255, 0.1);
-    }
-    50% {
-    box-shadow: 0    0    2px  2px rgba(255, 255, 255, 0.7),
-                6px  2px  8px  8px rgba(255, 0, 0, 0.5),
-               -4px 12px  8px  8px rgba(0, 0, 255, 0.3),
-                2px  0   -2px 16px rgba(255, 0, 255, 0.4),
-               -6px  4px  8px  8px rgba(255, 0, 0, 0.4),
-                8px -8px  8px  8px rgba(0, 0, 255, 0.6),
-               -4px -8px 16px 16px rgba(255, 0, 255, 0.3),
-               16px 10px  8px  8px rgba(0, 0, 255, 0.1);
-    }
-    100% {
-    box-shadow: 0    0    2px  2px rgba(255, 255, 255, 0.7),
-                2px  4px  8px  8px rgba(255, 0, 0, 0.5),
-               -2px -2px  8px  8px rgba(0, 0, 255, 0.5),
-               -2px  0   16px 16px rgba(255, 0, 255, 0.4),
-                6px  6px  8px  8px rgba(255, 0, 0, 0.4),
-               -8px -4px  8px  8px rgba(0, 0, 255, 0.4),
-               12px -8px 16px 16px rgba(255, 0, 255, 0.3),
-               24px 20px  8px  8px rgba(0, 0, 255, 0.3);
-    }
-}
+@import '../_variables.scss';
 
 #stars {
     width: 1px;
@@ -164,6 +123,7 @@ $white: #ffffff;
                  133px  144px $white,  562px 1348px $white,  473px  188px $white, 1710px  771px $white;
     animation: animStar 50s linear infinite
 }
+
 #stars:after {
     content: " ";
     position: absolute;
@@ -289,6 +249,7 @@ $white: #ffffff;
                  728px 1922px $white, 1373px  686px $white, 1942px  744px $white, 1483px  137px $white, 1846px  156px $white,  124px 1596px $white, 
                  133px  144px $white,  562px 1348px $white,  473px  188px $white, 1710px  771px $white;
 }
+
 #stars2 {
     width: 2px;
     height: 2px;
@@ -329,6 +290,7 @@ $white: #ffffff;
                 1344px  642px $white,  858px 1503px $white;
     animation: animStar 100s linear infinite;
 }
+
 #stars2:after {
     content: " ";
     position: absolute;
@@ -371,6 +333,7 @@ $white: #ffffff;
                  995px 1680px $white, 1773px 1312px $white,  919px  842px $white, 1646px  503px $white,   93px  613px $white,  353px  136px $white, 
                 1344px  642px $white,  858px 1503px $white;
 }
+
 #stars3 {
     width: 3px;
     height: 3px;
@@ -394,6 +357,7 @@ $white: #ffffff;
                 1166px 1128px $white, 1270px  290px $white, 1820px  130px $white, 1579px 1444px $white;
     animation: animStar 150s linear infinite;
 }
+
 #stars3:after {
     content: " ";
     position: absolute;
@@ -418,4 +382,13 @@ $white: #ffffff;
                 1199px  622px $white, 1566px  229px $white, 1191px  152px $white,  674px  288px $white, 1260px 1597px $white, 1713px  576px $white, 
                 1147px 1670px $white, 1146px  608px $white,  698px 1846px $white,  313px 1146px $white, 1471px  914px $white,  441px  521px $white, 
                 1166px 1128px $white, 1270px  290px $white, 1820px  130px $white, 1579px 1444px $white;
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
 }

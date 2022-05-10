@@ -1,0 +1,39 @@
+@import '../_variables.scss';
+
+textarea {
+    background-color: $black;
+    border: 1px solid $white;
+    font-family: 'Squared';
+    color: $light;
+    font-size: 20px;
+    padding: 4px;
+    font-weight: bold;
+    width: 24vw;
+    height: 20vh;
+    letter-spacing: 2px;
+}
+
+input[type=submit] {
+    background-color: $light;
+    border: 2px solid $white;
+    font-family: 'Squared';
+    color: $black;
+    font-size: 20px;
+    padding: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: -64px;
+
+    &:hover {
+        border: 2px solid $blue;
+    }
+}
+
+
+// Mobile friendly
+@media screen and (max-width: 1200px) {
+    textarea {
+        width: 80vw;
+        height: 20vh;
+    }
+}

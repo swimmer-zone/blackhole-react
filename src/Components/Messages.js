@@ -1,4 +1,5 @@
 import React from 'react';
+import '../assets/components/messages.scss';
 
 const Messages = (props) => {
     const types = {

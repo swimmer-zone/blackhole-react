@@ -1,0 +1,97 @@
+@import '_variables.scss';
+
+body {
+    background-color: $dark;
+    overflow-x: hidden;
+    height: 1450px;
+    max-height: 1450px;
+}
+
+h1 {
+    font-family: 'Cubic';
+    color: $blue;
+    position: absolute;
+    top: 40vh;
+    right: 10vh;
+    font-weight: bold;
+    font-size: 64px;
+    letter-spacing: 8px;
+    text-shadow: -8px -4px 8px rgba(0, 0, 255, 0.4),
+                  8px -4px 8px rgba(255, 0, 0, 0.4);
+}
+
+h2 {
+    font-family: 'Cubic';
+    color: $blue;
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 4px;
+    text-shadow: -6px -3px 6px rgba(0, 0, 255, 0.4),
+                  6px -3px 6px rgba(255, 0, 0, 0.4);
+}
+
+article {
+    text-align: right;
+    font-family: 'Squared';
+    color: $light;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 60vh;
+    right: 10vh;
+    font-size: 20px;
+    width: 35vw;
+}
+
+svg {
+    fill: $blue;
+    width: 64px;
+}
+
+
+// Scrollbars
+::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+    background: $dark;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $blue;
+    border: 1px solid $dark;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: $dark;
+}
+
+::-webkit-scrollbar-button {
+    background: $dark;
+    border: 1px solid $dark;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece,
+::-webkit-scrollbar-corner {
+    background: $dark;
+}
+
+
+// Mobile friendly
+@media screen and (max-width: 1200px) {
+    h1 {
+        top: 8vh;
+        right: 4vh;
+        font-size: 80px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+
+    article {
+        font-size: 32px;
+        top: 24vh;
+        right: 4vh;
+        width: 80vw;
+    }
+}

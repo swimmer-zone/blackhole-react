@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Cubic';
+    src:         url('../assets/cubic.woff') format('woff');
+    font-weight: normal;
+    font-style:  normal;
+}
+@font-face {
+    font-family: 'Squared';
+    src:         url('../assets/squared.woff') format('woff');
+    font-weight: normal;
+    font-style:  normal;
+}
+
+$white: #ffffff;
+$blue: #0000ff;
+$black: #000000;
+$dark: #080808;
+$red: #ff0000;
+$light: #eeeeee;

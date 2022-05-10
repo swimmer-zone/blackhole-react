@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
-import Messages from './Messages';
+import { Messages } from '../Components';
+import '../assets/components/form.scss';
 
 const Form = () => {
   	const [mailSent, setmailSent] = useState(false);
