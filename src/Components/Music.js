@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Async from 'react-async';
 import tracks from '../json/tracks.json';
 import '../assets/components/music.scss';
 
