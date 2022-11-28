@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hole, Form, Music, Stars } from '../Components';
+import { Hole, Music, Stars } from '../Components';
 import '../assets/app.scss';
 
 const App = () => {
@@ -22,9 +22,7 @@ const App = () => {
 				</a>
 
 				<h2>Leave a note</h2>
-				<p>Be sure to provide contact information</p>
-
-				<Form />
+				<p>Feed the black hole! Send a message to <a href="mailto:info@blackhole.voyage">info@blackhole.voyage</a> to contact us.</p>
 			</article>
 		</>
 	);
