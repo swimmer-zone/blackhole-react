@@ -3,4 +3,4 @@ import Messages from './Messages.js';
 import Music from './Music.js';
 import Stars from './Stars.js';
 
-export { Form, Hole, Messages, Music, Stars };
+export { Hole, Messages, Music, Stars };

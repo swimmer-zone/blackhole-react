@@ -40,6 +40,18 @@ article {
     right: 10vh;
     font-size: 20px;
     width: 35vw;
+
+    p a {
+        color: $white;
+        text-decoration: none;
+        border-bottom: 1px solid $red;
+            transition: border-bottom 1s;
+
+        &:hover {
+            border-bottom: 1px solid $blue;
+            transition: border-bottom 1s;
+        }
+    }
 }
 
 svg {
